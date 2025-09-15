@@ -5,7 +5,7 @@ import { checkedAddress, checkedTransactionSigner } from "../core";
 import { checkedTokenProgramAddress, getAssociatedTokenAccountAddress } from "../programs/token/addresses";
 import type { TokenInstructionBase } from "../programs/token/instructions/types";
 
-export type GetMintTokensInstructionsArgs = TokenInstructionBase & {
+export type MintToIxArgs = TokenInstructionBase & {
   /**
    * The Owner address capable of authorizing minting of new tokens.
    *
@@ -40,7 +40,7 @@ export type GetMintTokensInstructionsArgs = TokenInstructionBase & {
  * });
  * ```
  */
-export async function getMintTokensInstructions(args: GetMintTokensInstructionsArgs): Promise<Instruction[]> {
+export async function mintToInstructions(args: MintToIxArgs): Promise<Instruction[]> {
   args.tokenProgram = checkedTokenProgramAddress(args.tokenProgram);
   args.feePayer = checkedTransactionSigner(args.feePayer);
   args.mint = checkedAddress(args.mint);
