@@ -27,9 +27,9 @@ export type GetMintTokensInstructionsArgs = TokenInstructionBase & {
  *
  * ```
  * const mint = await generateKeyPairSigner();
- * const destination = address("nicktrLHhYzLmoVbuZQzHUTicd2sfP571orwo9jfc8c");
+ * const destination = await generateKeyPairSigner();
  *
- * const instructions = getMintTokensInstructions({
+ * const instructions = mintTo({
  *   mint,
  *   toOwner: signer,
  *   amount: 1000, // note: be sure to consider the mint's `decimals` value
